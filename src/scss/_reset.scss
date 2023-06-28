@@ -1,0 +1,60 @@
+html, body, h1, h2, h3, h4, h5, h6, div, p, blockquote, pre, address, table, caption, th, td, form, fieldset, legend, hr, input, textarea{
+	margin: 0;
+	padding: 0;
+}
+ul, ol, li, dl, dt, dd {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+article, aside, details, figcaption, figure, footer, header, menu, nav, section, main {
+	display: block;
+}
+a:link, a:visited, a:active {
+	color: #555555;
+	text-decoration: none;
+}
+a {
+	border:0;
+	background-color:transparent;
+	cursor: pointer
+}
+a:hover {
+    text-decoration:none;
+}
+img {
+	border-style:none;
+	-webkit-user-drag: none; 
+}
+em {
+	font-style: normal;	
+}
+button {
+	background: rgba(0, 0, 0, 0);
+}
+button,input,optgroup,select,textarea {
+	margin:0;
+	padding: 0;
+	border:none;
+	box-shadow:none;
+}
+button,input {
+	overflow:visible;
+}
+button,select {
+	text-transform:none;
+}
+table {
+	margin:0;
+	padding:0;
+	border-collapse:collapse;
+	border-spacing:0;
+}
+caption {
+	display:none;
+	width:0;
+	height:0;
+	line-height:0;
+	font-size:0;
+	visibility:hidden;
+}

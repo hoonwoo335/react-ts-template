@@ -1,0 +1,174 @@
+@charset "utf-8";
+/************************************************************************
+* filename		: _mixins.css
+* description	: _mixins CSS import
+* author		: arenacast
+* date			: 2021.07.12
++ version		: v1.0
+************************************************************************/
+
+// Flexbox display
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// Flex Flow Direction
+// - applies to: flex containers
+// row (default) | row-reverse | column | column-reverse
+@mixin flex-direction($direction: row) {
+    @if $direction == row-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: horizontal;
+            -moz-box-direction: reverse;
+            -moz-box-orient: horizontal;
+    } @else if $direction == column {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+            -moz-box-direction: normal;
+            -moz-box-orient: vertical;
+    } @else if $direction == column-reverse {
+        -webkit-box-direction: reverse;
+        -webkit-box-orient: vertical;
+            -moz-box-direction: reverse;
+            -moz-box-orient: vertical;
+    } @else {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+            -moz-box-direction: normal;
+            -moz-box-orient: horizontal;
+    }
+    -webkit-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+
+// - applies to: flex containers
+// flex-start | flex-end | center | space-between | space-around 
+@mixin justify-content($value: flex-start) {
+    @if $value == flex-start {
+         -webkit-box-pack: start;
+            -moz-box-pack: start;
+            -ms-flex-pack: start;
+    } @else if $value == flex-end {
+         -webkit-box-pack: end;
+            -moz-box-pack: end;
+            -ms-flex-pack: end;
+    } @else if $value == space-between {
+         -webkit-box-pack: justify;
+            -moz-box-pack: justify;
+            -ms-flex-pack: justify;
+    } @else if $value == space-around {
+            -ms-flex-pack: distribute;
+    } @else {
+         -webkit-box-pack: $value;
+            -moz-box-pack: $value;
+            -ms-flex-pack: $value;
+    }
+    -webkit-justify-content: $value;
+            justify-content: $value;
+}
+
+// Cross-axis Alignment
+// - applies to: flex containers
+// flex-start | flex-end | center | baseline | stretch 
+@mixin align-items($value: stretch) {
+    @if $value == flex-start {
+         -webkit-box-align: start;
+            -moz-box-align: start;
+            -ms-flex-align: start;
+    } @else if $value == flex-end {
+         -webkit-box-align: end;
+            -moz-box-align: end;
+            -ms-flex-align: end;
+    } @else {
+         -webkit-box-align: $value;
+            -moz-box-align: $value;
+            -ms-flex-align: $value;
+    }
+    -webkit-align-items: $value;
+            align-items: $value;
+}
+
+@mixin absolute-left-top($left, $top){
+    position: absolute;
+    left: $left;
+    top: $top;
+}
+
+@mixin absolute-right-top($right, $top){
+    position: absolute;
+    right: $right;
+    top: $top;    
+}
+
+@mixin absolute-left-bottom($left, $bottom){
+    position: absolute;
+    left: $left;
+    bottom: $bottom;    
+}
+
+@mixin absolute-right-bottom($right, $bottom){
+    position: absolute;
+    right: $right;
+    bottom: $bottom;    
+}
+
+@mixin width-height($width, $height){
+    width:$width;
+    height:$height;
+}
+
+@mixin background($img, $imgW, $imgH, $imgX, $imgY, $imgRepeat){
+    background-image: $img;
+    background-size: $imgW $imgH;
+    background-position: $imgX $imgY;
+    background-repeat: $imgRepeat; 
+}
+
+
+@mixin border-radius($r1, $r2, $r3, $r4) {
+    -webkit-border-radius: $r1 $r2 $r3 $r4;
+    -moz-border-radius: $r1 $r2 $r3 $r4;
+    -ms-border-radius: $r1 $r2 $r3 $r4;
+    border-radius: $r1 $r2 $r3 $r4;
+}
+
+
+// 미디어 쿼리 
+$breakpoint-mobile: 0px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+$breakpoint-max: 1960px;
+@mixin mobile {
+    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    // @media (max-width: 767px) {        
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) and (max-width: #{$breakpoint-max - 1px}) {
+        @content;
+    }
+}
+
+@mixin max {
+    @media (min-width: #{$breakpoint-max}) {
+        @content;
+    }
+}
+
+@mixin backdrop-filter-blur($value) {
+    backdrop-filter: blur($value);
+    -webkit-backdrop-filter: blur($value);
+}

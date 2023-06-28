@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+@mixin font-face($name, $file) { 
+  @font-face { 
+    font-family: "#{$name}"; 
+    src: url('#{$file}.woff') format('woff');
+    }  
+  }
+  @include font-face(blackHead, '/fonts/SequelSansBlackHead');   
+  @include font-face(boldDisp, '/fonts/SequelSans-BoldDisp');
+  @include font-face(boldBody, '/fonts/SequelSansBoldBody');
+  @include font-face(lightBody, '/fonts/SequelSansLightBody');
+  @include font-face(romanBody, '/fonts/SequelSansRomanBody');
+  @include font-face(boldDisp, '/fonts/SequelSansBoldDisp');
+  @include font-face(mediumDisp, '/fonts/SequelSansMediumDisp');
+  @include font-face(mediumBody, '/fonts/SequelSansMediumBody');
+  //@include font-face(mediumBody, 'http://publishing.keen.market/SequelSansMediumBody');                    
+  
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 1280px;
+  height: 100%;
+  font-family: blackHead,boldDisp,boldBody,lightBody,romanBody,boldDisp,mediumDisp,mediumBody;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+blockquote,
+pre,
+address,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+hr,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+a:link,
+a:visited,
+a:active {
+  color: #555555;
+  text-decoration: none;
+}
+a {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+}
+button,
+input {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+textarea {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+input,
+select,
+textarea {
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+}
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #a8a8a8;
+}
+input:-moz-placeholder,
+select:-moz-placeholder,
+textarea:-moz-placeholder {
+  color: #a8a8a8;
+}
+input::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #a8a8a8;
+}
+input:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #a8a8a8;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #c9c9c9;
+}
+input:focus::-webkit-input-placeholder,
+select:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder,
+select:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder,
+select:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder,
+select:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: #000;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
